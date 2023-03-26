@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1 class="text-center">İstatistikler</h1>
+<br />
+<div class="card-deck text-center">
+    <div class="card text-white bg-cyan mb-3">
+        <div class="card-header">Toplam Kategori</div><br />
+        <div class="card-body">
+            <h3 class="card-text">@ViewBag.v1</h3>
+        </div>
+    </div>
+    <div class="card text-white bg-cyan mb-3">
+        <div class="card-header">Başlık Tablosundaki Yazılım Kategorisine Ait Başlık </div>
+        <div class="card-body">
+            <h3 class="card-text">@ViewBag.v2</h3>
+        </div>
+    </div>
+    <div class="card text-white bg-cyan mb-3">
+        <div class="card-header">İsminde 'a' Karakteri  Olan Yazar</div>
+        <div class="card-body">
+            <h3 class="card-text">@ViewBag.v3</h3>
+        </div>
+    </div>
+    <div class="card text-white bg-cyan mb-3">
+        <div class="card-header">En Fazla Başlığa Sahip Kategori</div><br />
+        <div class="card-body">
+            <h3 class="card-text">@ViewBag.v4</h3>
+        </div>
+    </div>
+    <div class="card text-white bg-cyan mb-3">
+        <div class="card-header">Kategori Durumu True-False Karşılaştırması</div>
+        <div class="card-body">
+            <h3 class="card-text">@ViewBag.v5</h3>
+        </div>
+    </div>
+</div>

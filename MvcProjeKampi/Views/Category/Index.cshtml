@@ -3,25 +3,48 @@
     Layout = null;
 }
 
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
 <h3>Mvc Kamp Tablo Denemesi</h3>
 <br />
-<table>
+<table class="table table-hover">
     <tr>
         <th>ID</th>
         <th>İsim</th>
         <th>Açıklama</th>
         <th>Durum</th>
+        <th>Düzenle</th>
     </tr>
     <tr>
-        <td>1</td>
+        <th>1</th>
         <td>Spor</td>
         <td>Açıklama kısmı</td>
         <td>Aktif</td>
+        <td><button class="btn btn-success">Düzenle</button></td>
     </tr>
     <tr>
-        <td>2</td>
-        <th>Sinema</th>
-        <th>Açıklama kısmı</th>
-        <th>Aktif</th>
+        <th>2</th>
+        <td>Sinema</td>
+        <td>Açıklama kısmı</td>
+        <td>Aktif</td>
+        <td><button class="btn btn-success">Düzenle</button></td>
+    </tr>
+    <tr>
+        <th>3</th>
+        <td>Resim</td>
+        <td>Açıklama kısmı</td>
+        <td>Aktif</td>
+        <td><button class="btn btn-success">Düzenle</button></td>
+    </tr>
+    <tr>
+        <th>4</th>
+        <td>Sanat</td>
+        <td>Açıklama kısmı</td>
+        <td>Aktif</td>
+        <td><button class="btn btn-success">Düzenle</button></td>
     </tr>
 </table>
+
+<button class="btn btn-info">Yeni Kategori</button>
+<button class="btn btn-warning">Kategori Listesi</button>
+<button class="btn btn-danger">Kategori Açıklamaları</button>
