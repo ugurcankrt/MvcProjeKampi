@@ -1,0 +1,46 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{string statusButton = ""; string statusButtonColor = "";}
+
+
+<h1>Hakkımızda Veri Listesi Sayfası</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Durum</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.AbouStatus)
+        {
+            statusButton = "Pasif Yap";
+            statusButtonColor = "btn btn-outline-danger btn-sm";
+        }
+
+        else
+        {
+            statusButton = "Aktif Yap";
+            statusButtonColor = "btn btn-outline-success btn-sm";
+        }
+        <tr>
+            <th>@item.AboutID</th>
+            <td>Başlık</td>
+            <td><a href="/About/StatusChangeAbout/@item.AboutID/" class="@statusButtonColor">@statusButton</a></td>
+
+        </tr>
+    }
+</table>
+<br />
+
+@Html.Action("AddAboutPartial", "About")
+
+
+

@@ -56,6 +56,8 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -67,10 +69,60 @@
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202303162150159_mig_first.cs" />
     <Compile Include="Migrations\202303162150159_mig_first.designer.cs">
       <DependentUpon>202303162150159_mig_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303282134084_mig_writerabout_column_add.cs" />
+    <Compile Include="Migrations\202303282134084_mig_writerabout_column_add.designer.cs">
+      <DependentUpon>202303282134084_mig_writerabout_column_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303282230425_mig_writertitle_column_add.cs" />
+    <Compile Include="Migrations\202303282230425_mig_writertitle_column_add.designer.cs">
+      <DependentUpon>202303282230425_mig_writertitle_column_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303291607133_mig_writerimage_column_edit.cs" />
+    <Compile Include="Migrations\202303291607133_mig_writerimage_column_edit.designer.cs">
+      <DependentUpon>202303291607133_mig_writerimage_column_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303292212471_mig_writertable_statuscolumn_add.cs" />
+    <Compile Include="Migrations\202303292212471_mig_writertable_statuscolumn_add.designer.cs">
+      <DependentUpon>202303292212471_mig_writertable_statuscolumn_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303292303297_mig_contentstatus_column_add.cs" />
+    <Compile Include="Migrations\202303292303297_mig_contentstatus_column_add.designer.cs">
+      <DependentUpon>202303292303297_mig_contentstatus_column_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303292306549_mig_headingstatus_column_add.cs" />
+    <Compile Include="Migrations\202303292306549_mig_headingstatus_column_add.designer.cs">
+      <DependentUpon>202303292306549_mig_headingstatus_column_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303312303580_mig_add_message_table.cs" />
+    <Compile Include="Migrations\202303312303580_mig_add_message_table.designer.cs">
+      <DependentUpon>202303312303580_mig_add_message_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304011354354_mig_contact_contactdate_column_add.cs" />
+    <Compile Include="Migrations\202304011354354_mig_contact_contactdate_column_add.designer.cs">
+      <DependentUpon>202304011354354_mig_contact_contactdate_column_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304021231463_mig_imagefile_table_add.cs" />
+    <Compile Include="Migrations\202304021231463_mig_imagefile_table_add.designer.cs">
+      <DependentUpon>202304021231463_mig_imagefile_table_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304021352219_mig_admin_table_add.cs" />
+    <Compile Include="Migrations\202304021352219_mig_admin_table_add.designer.cs">
+      <DependentUpon>202304021352219_mig_admin_table_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304021459492_mig_message_table_edit.cs" />
+    <Compile Include="Migrations\202304021459492_mig_message_table_edit.designer.cs">
+      <DependentUpon>202304021459492_mig_message_table_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304021616041_mig_about_aboutstatus_column_add.cs" />
+    <Compile Include="Migrations\202304021616041_mig_about_aboutstatus_column_add.designer.cs">
+      <DependentUpon>202304021616041_mig_about_aboutstatus_column_add.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +140,42 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202303162150159_mig_first.resx">
       <DependentUpon>202303162150159_mig_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303282134084_mig_writerabout_column_add.resx">
+      <DependentUpon>202303282134084_mig_writerabout_column_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303282230425_mig_writertitle_column_add.resx">
+      <DependentUpon>202303282230425_mig_writertitle_column_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303291607133_mig_writerimage_column_edit.resx">
+      <DependentUpon>202303291607133_mig_writerimage_column_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303292212471_mig_writertable_statuscolumn_add.resx">
+      <DependentUpon>202303292212471_mig_writertable_statuscolumn_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303292303297_mig_contentstatus_column_add.resx">
+      <DependentUpon>202303292303297_mig_contentstatus_column_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303292306549_mig_headingstatus_column_add.resx">
+      <DependentUpon>202303292306549_mig_headingstatus_column_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303312303580_mig_add_message_table.resx">
+      <DependentUpon>202303312303580_mig_add_message_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304011354354_mig_contact_contactdate_column_add.resx">
+      <DependentUpon>202304011354354_mig_contact_contactdate_column_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304021231463_mig_imagefile_table_add.resx">
+      <DependentUpon>202304021231463_mig_imagefile_table_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304021352219_mig_admin_table_add.resx">
+      <DependentUpon>202304021352219_mig_admin_table_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304021459492_mig_message_table_edit.resx">
+      <DependentUpon>202304021459492_mig_message_table_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304021616041_mig_about_aboutstatus_column_add.resx">
+      <DependentUpon>202304021616041_mig_about_aboutstatus_column_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
