@@ -45,12 +45,12 @@ namespace BusinessLayer.Concrete
 
         public int GetCountUnOpenedReceiverMessage(string p)
         {
-            return _messageDal.List(x => !x.IsOpened && x.ReceiverMail == p).Count();
+            return _messageDal.List(x => /*!x.IsOpened && */ x.ReceiverMail == p).Count();
         }
 
         public int GetCountUnOpenedSenderMessage(string p)
         {
-            return _messageDal.List(x => !x.IsOpened && x.SenderMail == p).Count();
+            return _messageDal.List(x => /*!x.IsOpened && */ x.SenderMail == p).Count();
         }
 
         public void MessageDelete(Message message)

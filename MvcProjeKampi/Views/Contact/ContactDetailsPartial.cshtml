@@ -14,19 +14,19 @@
                 <li class="nav-item active">
                     <a href="/Contact/Index/" class="nav-link">
                         <i class="fas fa-mail-bulk"></i> İletişim
-                        <span class="badge bg-primary float-right">0</span>
+                        <span class="badge bg-primary float-right">@ViewBag.ContactMessageCount</span>
                     </a>
                 </li>
                 <li class="nav-item active">
                     <a href="/Message/InBox/" class="nav-link">
                         <i class="fas fa-inbox"></i> Gelen Mesajlar
-                        <span class="badge bg-primary float-right">0</span>
+                        <span class="badge bg-primary float-right">@ViewBag.InBoxMessageCount</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/Message/SendBox/" class="nav-link">
                         <i class="far fa-envelope"></i> Gönderilen Mesajlar
-                        <span class="badge bg-warning float-right"></span>
+                        <span class="badge bg-warning float-right">@ViewBag.SendBoxMessageCount</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -37,7 +37,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-filter"></i> Spam
-                        <span class="badge bg-warning float-right">0</span>
+                        <span class="badge bg-warning float-right"></span>
                     </a>
                 </li>
                 <li class="nav-item">

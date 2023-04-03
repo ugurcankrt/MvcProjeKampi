@@ -58,6 +58,7 @@
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
+    <Compile Include="Abstract\ISkillDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfSkillDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202303162150159_mig_first.cs" />
     <Compile Include="Migrations\202303162150159_mig_first.designer.cs">
@@ -124,6 +126,10 @@
     <Compile Include="Migrations\202304021616041_mig_about_aboutstatus_column_add.designer.cs">
       <DependentUpon>202304021616041_mig_about_aboutstatus_column_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304031209031_mig_skill_table_add.cs" />
+    <Compile Include="Migrations\202304031209031_mig_skill_table_add.designer.cs">
+      <DependentUpon>202304031209031_mig_skill_table_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304021616041_mig_about_aboutstatus_column_add.resx">
       <DependentUpon>202304021616041_mig_about_aboutstatus_column_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304031209031_mig_skill_table_add.resx">
+      <DependentUpon>202304031209031_mig_skill_table_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

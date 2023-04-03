@@ -19,6 +19,7 @@ namespace MvcProjeKampi.Controllers
         public ActionResult InBox()
         {
             var messageList = messageManager.GetListInBox();
+            ViewBag.unOpenedMessage = messageManager.GetCountUnOpenedReceiverMessage("uk@gmail.com");
             return View(messageList);
         }
 
@@ -67,8 +68,22 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
+        public ActionResult IsOpened(int id)
+        {
+            var messageValue = messageManager.GetByID(id);
+
+            if (!messageValue.IsOpened)
+            {
+                messageValue.IsOpened = true;
+                messageManager.MessageUpdate(messageValue);
+            }
+            return RedirectToAction("Inbox");
+        }
+
         public PartialViewResult MessageListMenuPartial()
         {
+            ViewBag.InBoxMessageCount = messageManager.GetCountUnOpenedReceiverMessage("uk@gmail.com");
+            ViewBag.SendBoxMessageCount = messageManager.GetCountUnOpenedSenderMessage("uk@gmail.com");
             return PartialView();
         }
     }

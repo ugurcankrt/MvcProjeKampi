@@ -19,9 +19,8 @@ namespace MvcProjeKampi.Controllers
         [Authorize]
         public ActionResult InBox()
         {
-            string adminUsername = (string)Session["AdminUsername"];
             var messageList = messageManager.GetListInBox();
-            ViewBag.unOpenedMessage = messageManager.GetCountUnOpenedReceiverMessage(adminUsername);
+            ViewBag.unOpenedMessage = messageManager.GetCountUnOpenedReceiverMessage("uk@gmail.com");
             return View(messageList);
         }
 
