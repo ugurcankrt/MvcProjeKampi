@@ -17,16 +17,16 @@ namespace MvcProjeKampi.Controllers
         MessageValidator messageValidator = new MessageValidator();
 
         [Authorize]
-        public ActionResult InBox()
+        public ActionResult InBox(string p)
         {
-            var messageList = messageManager.GetListInBox();
+            var messageList = messageManager.GetListInBox(p);
             ViewBag.unOpenedMessage = messageManager.GetCountUnOpenedReceiverMessage("uk@gmail.com");
             return View(messageList);
         }
 
-        public ActionResult SendBox()
+        public ActionResult SendBox(string p)
         {
-            var messageList = messageManager.GetListSendBox();
+            var messageList = messageManager.GetListSendBox(p);
             return View(messageList);
         }
 

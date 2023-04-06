@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete
+@model List<Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+
+<h1>Admin Düzenleme Sayfası</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı Mail</th>
+        <th>Yetki</th>
+        <th>Durum</th>
+        <th>Pasif Yap</th>
+        <th>Yetkisini Değiştir</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.AdminID</th>
+            <td>@item.AdminUsername</td>
+            <td>@item.AdminRole</td>
+            <td>Aktif</td>
+            <td><a href="/Authorization/DeleteAdmin/@item.AdminID" class="btn btn-outline-danger">Pasif Yap</a></td>
+            <td><a href="/Authorization/EditAdmin/@item.AdminID" class="btn btn-outline-warning">Yetkisini Değiştir</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Authorization/AddAdmin" class="btn btn-info">Yeni Admin Tanımla</a>
+

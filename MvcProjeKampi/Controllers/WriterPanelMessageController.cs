@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -15,17 +16,18 @@ namespace MvcProjeKampi.Controllers
     {
         MessageManager messageManager = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
-
         public ActionResult InBox()
         {
-            var messageList = messageManager.GetListInBox();
-            ViewBag.unOpenedMessage = messageManager.GetCountUnOpenedReceiverMessage("uk@gmail.com");
+            string p = (string)Session["WriterMail"];
+            var messageList = messageManager.GetListInBox(p);
+            ViewBag.unOpenedMessage = messageManager.GetCountUnOpenedReceiverMessage(p);
             return View(messageList);
         }
 
         public ActionResult SendBox()
         {
-            var messageList = messageManager.GetListSendBox();
+            string p = (string)Session["WriterMail"];
+            var messageList = messageManager.GetListSendBox(p);
             return View(messageList);
         }
 
@@ -51,9 +53,11 @@ namespace MvcProjeKampi.Controllers
         public ActionResult NewMessage(Message p)
         {
             ValidationResult results = messageValidator.Validate(p);
+            string sender = (string)Session["WriterMail"];
+
             if (results.IsValid)
             {
-                p.SenderMail = "uk@gmail.com";
+                p.SenderMail = sender;
                 p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 messageManager.MessageAdd(p);
                 return RedirectToAction("SendBox");
@@ -82,8 +86,9 @@ namespace MvcProjeKampi.Controllers
 
         public PartialViewResult MessageListMenuPartial()
         {
-            ViewBag.InBoxMessageCount = messageManager.GetCountUnOpenedReceiverMessage("uk@gmail.com");
-            ViewBag.SendBoxMessageCount = messageManager.GetCountUnOpenedSenderMessage("uk@gmail.com");
+            string result = (string)Session["WriterMail"];
+            ViewBag.InBoxMessageCount = messageManager.GetCountUnOpenedReceiverMessage(result);
+            ViewBag.SendBoxMessageCount = messageManager.GetCountUnOpenedSenderMessage(result);
             return PartialView();
         }
     }

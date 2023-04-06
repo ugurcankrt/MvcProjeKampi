@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "SweetAlert";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+<button class=" btn btn-outline-success" id="btn1">Buton 1</button>
+<button class=" btn btn-outline-warning" id="btn2">Buton 2</button>
+<button class=" btn btn-outline-danger" id="btn3">Buton 3</button>
+
+
+<script>
+    $('#btn1').click(function () {
+        swal("Merhaba Hoş Geldiniz");
+
+    });
+
+    $('#btn2').click(function () {
+        swal("Ooops", "Sanırım bir şeyler ters gitti", "warning");
+
+    });
+
+
+    $('#btn3').click(function () {
+        swal({
+            title: "Emin misiniz?",
+            text: "Bu işlemden sonra dosya tamamen silinecektir!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Dosya başarıyla silindi.", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Dosya silme işlemi iptal edildi.");
+                }
+            });
+    });
+</script>
